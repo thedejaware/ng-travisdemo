@@ -2,27 +2,12 @@ language: node_js
 node_js:
   - "9"
 dist: trusty
-sudo: false
-
+sudo: required
 branches:
   only:
-  - master
-
-cache:
-  directories:
-    - node_modules
-
-install:
-  - npm install -g yarn
-
+    - master
+before_script:
+  - npm install -g @angular/cli
 script:
-  - yarn lint
-  - yarn build --base-href /ng-travisdemo/
-  - mv dist/ng-travisdemo/index.html dist/ng-travisdemo/404.html
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/ng-travisdemo
-  on:
-    branch: master
+  - ng lint
+  - ng build --prod --base-href /ng-travisdemo/
