@@ -1,9 +1,9 @@
+import { OrderComponent } from './order/order.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { OrderComponent } from './order/order.component';
 
 
 @NgModule({

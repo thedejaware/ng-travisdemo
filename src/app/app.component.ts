@@ -9,4 +9,7 @@ export class AppComponent {
   title = 'app';
   name = 'mehmet';
   surname = 'akin';
+  constructor() {
+
+  }
 }
